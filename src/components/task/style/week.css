@@ -1,0 +1,6 @@
+.tasks {
+  width: 1800px;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
