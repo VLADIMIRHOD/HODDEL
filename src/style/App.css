@@ -11,9 +11,7 @@
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
   background-color: rgba(6, 6, 8, 0.84);
-
 }
 .App {
   display: flex;

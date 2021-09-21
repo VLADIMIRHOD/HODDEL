@@ -1,6 +1,5 @@
 import React from "react";
 import Auth from "./components/auth/auth";
-import Week from "./components/task/week";
 import './style/App.css'
 
 

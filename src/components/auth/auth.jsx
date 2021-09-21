@@ -1,23 +1,27 @@
 import React from 'react';
-import './style/auth.css'
+import classes from './style/auth.module.css'
 
 function Auth() {
   return (
-    <div className="Container">
-        <form action="alert(1)" method="post" onsubmit="return false;">
-          <section>
-            <label for="name">Логин:</label>
-            <input type="text" id="name" name="user_name"/>
-          </section>
-          <section>
-            <label for="mail">Пароль:</label>
-            <input type="password" id="mail" name="user_mail"/>
-          </section>
-          <button type="submit">Войти</button>
-          <button type="submit">Регистрция</button>
+    <div className={classes.Container}>
+        <form className={classes.authForm} action="alert(1)" method="post" autocomplete="off">
+          <input className={classes.formItem} type="text" id="name" name="user_name" placeholder=" Логин"/>
+          <input className={classes.formItem}  type="password" id="password" name="user_passwordc" placeholder=" Пароль"/>
+          <button className={classes.formItem} type="submit" onClick={login}>Войти</button>
+          <button className={classes.formItem} type="submit" onClick={registration}>Регистрация</button>
         </form>
     </div>
   )
 }
 
 export default Auth
+
+function login(e) {
+  alert("login")
+  e.preventDefault()
+}
+
+function registration(e) {
+  alert("registration")
+  e.preventDefault()
+}
