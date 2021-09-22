@@ -31,7 +31,7 @@
   text-align: center;
 }
 
-.formItem:hover, .formItem:hover::placeholder {
+input.formItem, .formItem:hover, .formItem:hover::placeholder {
   color: #C2C2FC;
   transition: .1s;
 }
