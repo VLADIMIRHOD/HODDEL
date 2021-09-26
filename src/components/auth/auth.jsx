@@ -1,13 +1,18 @@
 import React, { useState }  from 'react';
 import classes from './style/auth.module.css'
 
-function Auth() {
+function Auth(props) {
   const [Login, setLogin] = useState('')
   const [Pass, setPass] = useState('')
 
   function login(e) {
     alert([Login, Pass])
     e.preventDefault()
+    if(Login == 1 && Pass == 1) {
+      props.authProtect(true)
+    } else {
+      props.authProtect(false)
+    }
   }
   
   function registration(e) {

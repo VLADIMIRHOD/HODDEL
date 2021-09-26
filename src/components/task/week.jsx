@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import DayWeek from "./DayWeek"
-import './style/week.css'
+import classes from './style/week.module.css'
 
 function Week() {
   const [dayOfWeek, setDayOfWeek] = useState([
