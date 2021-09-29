@@ -4,7 +4,7 @@ import Week from "./components/task/week.jsx"
 import './style/App.css'
 
 function App() {
-    let [authProtect, setAuthProtect] = useState(true)
+    let [authProtect, setAuthProtect] = useState(false)
     return (authProtect ? <Week/>  :<Auth authProtect={setAuthProtect}/>)
 }
 export default App;
