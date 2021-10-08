@@ -15,6 +15,7 @@
   margin: 20px;
   border-radius: 5px;
   transition: .2s;
+  padding: 5px;
 }
 .imgNavbar:hover {
   box-shadow: 0px 0px 10px 5px #C2C2FC;
