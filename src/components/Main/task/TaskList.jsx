@@ -14,12 +14,12 @@ export default function TaskList() {
           if(!task.complete) {
             return (<div className={classes.Task}>
             <section>
-              <h6>{task.name}</h6>
-              {task.info ? <p>{task.info}</p> : ''}
+              <input type="text" value={task.name}/>
+              {task.info ? <input type="text" value={task.info}/> : ''}
             </section>
             <section>
-              <button>&#10004;</button>
-              <button>&#10006;</button>
+              <button className={classes.TaskComplete}>&#10004;</button>
+              <button className={classes.TaskDelete}>&#10006;</button>
             </section>
             </div>)
           }
