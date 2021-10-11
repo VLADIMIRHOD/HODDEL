@@ -13,34 +13,40 @@ export default function TaskList() {
     {id: 7, name:"bdd7", info: false , complete: false}
   ])
 
-  const [newTaskName, setNewTaskName] = useState('')
-  const [newTaskInfo, setNewTaskInfo] = useState('')
+  const [name, setName] = useState('')
+  const [info, setInfo] = useState('')
 
-  const addNewTask = () => {
-    console.log(newTaskName, newTaskInfo)
+  const addNewTask = (e) => {
+    e.preventDefault()
+    const newTask = {id : Date.now(), name, info}
+    setTasks([...tasks, newTask])
+    setName('')
+    setInfo('')
   }
 
   return (
     <div className={classes.TasksList}>
-    <div className={classes.Task}>
-        <section className={classes.main}>
-          <textarea 
-            type="text"
-            value={newTaskName}
-            placeholder="Название задачи"
-            onChange={event => setNewTaskName(event.target.value)}
-          />
-          <textarea 
-            type="text"
-            value={newTaskInfo}
-            placeholder="Описание задачи"
-            onChange={event => setNewTaskInfo(event.target.value)} 
-          />
-        </section>
-        <section className={classes.buttons}>
-          <button className={classes.TaskNew} onClick={addNewTask}>Добавить</button>
-        </section>
-      </div>
+      <form>
+        <div className={classes.Task}>
+            <section className={classes.main}>
+              <textarea 
+                type="text"
+                value={name}
+                placeholder="Название задачи"
+                onChange={event => setName(event.target.value)}
+              />
+              <textarea 
+                type="text"
+                value={info}
+                placeholder="Описание задачи"
+                onChange={event => setInfo(event.target.value)} 
+              />
+            </section>
+            <section className={classes.buttons}>
+              <button className={classes.TaskNew} onClick={addNewTask}>Добавить</button>
+            </section>
+          </div>
+        </form>
         {tasks.map(task => {
           if(!task.complete) {
             return <Task task={task} key={task.id}/>
