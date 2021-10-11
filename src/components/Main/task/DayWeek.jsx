@@ -1,5 +1,4 @@
 import React from 'react'
-import InputTask from './InputTask'
 import './style/DayWeek.css'
 
 function DayWeek(props) {
@@ -9,11 +8,6 @@ function DayWeek(props) {
           <div className="tasks__day">
               <p className="task__dayWeek">{props.day.name}</p>
               <p className="task__dayMonth">{months[now.getMonth()]}</p>
-              <InputTask/>
-              <InputTask/>
-              <InputTask/>
-              <InputTask/>
-              <InputTask/>
           </div>
   )
 }
