@@ -13,15 +13,13 @@ export default function TaskList() {
     {id: 7, name:"bdd7", info: false , complete: false}
   ])
 
-  const [name, setName] = useState('')
-  const [info, setInfo] = useState('')
+  const [task, setTask] = useState({name: '', info: ''})
 
   const addNewTask = (e) => {
+    console.log(task);
     e.preventDefault()
-    const newTask = {id : Date.now(), name, info}
-    setTasks([...tasks, newTask])
-    setName('')
-    setInfo('')
+    setTasks([...tasks, {...task, id : Date.now()}])
+    setTask({name: '', info: ''})
   }
 
   return (
@@ -31,15 +29,15 @@ export default function TaskList() {
             <section className={classes.main}>
               <textarea 
                 type="text"
-                value={name}
+                value={task.name}
                 placeholder="Название задачи"
-                onChange={event => setName(event.target.value)}
+                onChange={e => setTask({...task, name : e.target.value})}
               />
               <textarea 
                 type="text"
-                value={info}
+                value={task.info}
                 placeholder="Описание задачи"
-                onChange={event => setInfo(event.target.value)} 
+                onChange={e => setTask({...task, info : e.target.value})} 
               />
             </section>
             <section className={classes.buttons}>
