@@ -1,13 +1,17 @@
-.TasksList {
+.TasksBlock {
   display: flex;
   flex-direction: column;
-  margin: 25px;
-  height: 100%;
-  overflow: scroll;
+  margin: 20px;
+  max-height: calc(100% - 40px);
+  overflow: hidden;
   background-color: #4d4a5231;
 }
-.TasksList::-webkit-scrollbar, .Task::-webkit-scrollbar {
+.TasksBlock::-webkit-scrollbar, .Task::-webkit-scrollbar, .TaskList::-webkit-scrollbar {
   width: 0;
+}
+
+.TaskList {
+  overflow: scroll;
 }
 
 .Task {
@@ -64,7 +68,6 @@
 .main textarea::placeholder {
   color: rgb(255, 255, 255);
 }
-
 
 .main textarea:first-child {
   font-size: 1.2rem;
