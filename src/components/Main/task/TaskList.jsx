@@ -41,7 +41,7 @@ export default function TaskList() {
               />
             </section>
             <section className={classes.buttons}>
-              <button className={classes.TaskNew} onClick={addNewTask}>Добавить</button>
+              <button className={classes.TaskNew} onClick={addNewTask}>&#10010;</button>
             </section>
           </div>
         </form>

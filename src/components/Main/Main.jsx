@@ -1,18 +1,30 @@
-import React from "react"
-import classes from './Style/Main.module.css'
-import TaskList from "./task/TaskList"
+import React from "react";
+import classes from "./Style/Main.module.css";
+import TaskList from "./task/TaskList";
 
 function Main() {
   return (
     <main className={classes.Main}>
       <nav className={classes.Navbar}>
-        <img className={classes.imgNavbar} src="./img/taskList.svg" alt="Список задач"/>
-        <img className={classes.imgNavbar} src="./img/profile.svg" alt="Профиль"/>
-        <img className={classes.imgNavbar} src="./img/info.svg" alt="Информация"/>
+        <img
+          className={classes.imgNavbar}
+          src="./img/taskList.svg"
+          alt="Информация"
+        />
+        <img
+          className={classes.imgNavbar}
+          src="./img/profile.svg"
+          alt="Информация"
+        />
+        <img
+          className={classes.imgNavbar}
+          src="./img/info.svg"
+          alt="Информация"
+        />
       </nav>
-      <TaskList/>
+      <TaskList />
     </main>
-  )
+  );
 }
 
-export default Main
+export default Main;
