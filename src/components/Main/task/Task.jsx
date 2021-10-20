@@ -20,7 +20,7 @@ function Task(props) {
       </section>
       <section className={classes.buttons}>
         <button className={classes.TaskComplete}>&#10004;</button>
-        <button className={classes.TaskDelete}>&#10006;</button>
+        <button className={classes.TaskDelete} onClick={() => props.remove(props.task)}>&#10006;</button>
       </section>
       </div>
   )

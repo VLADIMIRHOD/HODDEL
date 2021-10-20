@@ -1,10 +1,12 @@
 .TasksBlock {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   margin: 20px;
   max-height: calc(100% - 40px);
   overflow: hidden;
   background-color: #4d4a5231;
+  clear:both;
 }
 .TasksBlock::-webkit-scrollbar, .Task::-webkit-scrollbar, .TaskList::-webkit-scrollbar {
   width: 0;
