@@ -4,7 +4,7 @@ import Main from "./components/Main/Main"
 import './style/App.css'
 
 function App() {
-    let [authProtect, setAuthProtect] = useState(false)
+    let [authProtect, setAuthProtect] = useState(true)
     return (authProtect ? 
     <Main/>
     :<Auth authProtect={setAuthProtect}/>)

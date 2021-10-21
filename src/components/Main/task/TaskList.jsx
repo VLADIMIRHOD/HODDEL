@@ -10,27 +10,27 @@ export default function TaskList() {
       info: "rebusebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyt ntn tyn tyn tyn",
       complete: false,
     },
-    // {
-    //   id: 2,
-    //   name: "bdd1",
-    //   info: "rebust gwrgrt rrebust gwrgrt rh ytn tynh ytn tyn",
-    //   complete: false,
-    // },
-    // { id: 3, name: "bdd2", info: false, complete: false },
-    // { id: 4, name: "bdd3", info: "rebust gwrgrt rh ytn tyn", complete: true },
-    // {
-    //   id: 5,
-    //   name: "adebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyd",
-    //   info: "rebusebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyt ntn tyn tyn tyn",
-    //   complete: false,
-    // },
-    // {
-    //   id: 6,
-    //   name: "bdd6",
-    //   info: "rebust gwrgrt rrebust gwrgrt rh ytn tynh ytn tyn",
-    //   complete: false,
-    // },
-    // { id: 7, name: "bdd7", info: false, complete: false },
+    {
+      id: 2,
+      name: "bdd1",
+      info: "rebust gwrgrt rrebust gwrgrt rh ytn tynh ytn tyn",
+      complete: false,
+    },
+    { id: 3, name: "bdd2", info: false, complete: false },
+    { id: 4, name: "bdd3", info: "rebust gwrgrt rh ytn tyn", complete: true },
+    {
+      id: 5,
+      name: "adebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyd",
+      info: "rebusebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyebust ntn tyn tyt ntn tyn tyn tyn",
+      complete: false,
+    },
+    {
+      id: 6,
+      name: "bdd6",
+      info: "rebust gwrgrt rrebust gwrgrt rh ytn tynh ytn tyn",
+      complete: false,
+    },
+    { id: 7, name: "bdd7", info: false, complete: false },
   ]);
 
   const [task, setTask] = useState({ name: "", info: "" });
@@ -38,12 +38,12 @@ export default function TaskList() {
   const addNewTask = (e) => {
     e.preventDefault();
     setTasks([...tasks, { ...task, id: Date.now() }]);
-    setTask({ name: "", info: "", complete: false});
+    setTask({ name: "", info: "", complete: false });
   };
 
   const removeTask = (task) => {
-    setTasks(tasks.filter(t => t.id !== task.id))
-  }
+    setTasks(tasks.filter((t) => t.id !== task.id));
+  };
 
   return (
     <div className={classes.TasksBlock}>
@@ -54,7 +54,9 @@ export default function TaskList() {
               type="text"
               value={task.name}
               placeholder="Название задачи"
-              onChange={(e) => setTask({ ...task, name: e.target.value, complete: false })}
+              onChange={(e) =>
+                setTask({ ...task, name: e.target.value, complete: false })
+              }
             />
             <textarea
               type="text"
@@ -71,9 +73,10 @@ export default function TaskList() {
         </div>
       </form>
       <div className={classes.TaskList}>
-        {tasks.map((task) => {
+        {
+        tasks.map((task) => {
           if (!task.complete) {
-            return <Task task={task} key={task.id} remove={removeTask}/>;
+            return <Task task={task} key={task.id} remove={removeTask} />;
           }
         })}
       </div>

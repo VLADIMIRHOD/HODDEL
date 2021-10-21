@@ -8,18 +8,13 @@ function Main() {
       <nav className={classes.Navbar}>
         <img
           className={classes.imgNavbar}
-          src="./img/taskList.svg"
-          alt="Информация"
+          src="./img/list.svg"
+          alt="список задач"
         />
         <img
           className={classes.imgNavbar}
-          src="./img/profile.svg"
-          alt="Информация"
-        />
-        <img
-          className={classes.imgNavbar}
-          src="./img/info.svg"
-          alt="Информация"
+          src="./img/setting.svg"
+          alt="Настройки"
         />
       </nav>
       <TaskList />

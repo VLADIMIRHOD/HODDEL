@@ -4,6 +4,7 @@ import classes from './style/Task.module.css'
 function Task(props) {
   const [name, setName] = useState(props.task.name)
   const [info, setInfo] = useState(props.task.info)
+  
   return (
     <div className={classes.Task}>
       <section className={classes.main}>
