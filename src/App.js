@@ -1,12 +1,14 @@
-import React, { useState } from "react"
-import Auth from "./components/auth/auth"
-import Main from "./components/Main/Main"
+import React from "react"
+import { BrowserRouter } from "react-router-dom"
+import AppRouter from "./components/AppRouter";
 import './style/App.css'
 
 function App() {
-    let [authProtect, setAuthProtect] = useState(true)
-    return (authProtect ? 
-    <Main/>
-    :<Auth authProtect={setAuthProtect}/>)
+    return (
+        <BrowserRouter>
+            <AppRouter/>
+            <div>222</div>
+        </BrowserRouter>
+    )
 }
 export default App;
