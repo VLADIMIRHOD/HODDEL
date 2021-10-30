@@ -6,13 +6,8 @@ function Auth(props) {
   const [Pass, setPass] = useState('')
 
   function login(e) {
-    alert([Login, Pass])
     e.preventDefault()
-    if(Login == 1 && Pass == 1) {
-      props.authProtect(true)
-    } else {
-      props.authProtect(false)
-    }
+    alert([Login, Pass])
   }
   
   function registration(e) {
@@ -22,7 +17,7 @@ function Auth(props) {
 
   return (
     <div className={classes.Container}>
-        <form className={classes.authForm} action="alert(1)" method="post" autocomplete="off">
+        <form className={classes.authForm} action="alert(1)" method="post" autoComplete="off">
           <input 
             className={classes.formItem} type="text" id="name" name="user_name" placeholder=" Логин" 
             value={Login}

@@ -8,14 +8,14 @@ export default function AppRouter() {
   return user ? (
     <Switch>
       {PrivateRoutes.map(({path, Component}) => (
-        <Route path={path} component={Component} exact={true}></Route>
+        <Route path={path} key={path} component={Component} exact={true}></Route>
       ))}
       <Redirect to={TASK_LIST_ROUTE}></Redirect>
     </Switch>
   ) : (
     <Switch>
       {PublicRoutes.map(({path, Component}) => (
-        <Route path={path} component={Component} exact={true}></Route>
+        <Route path={path} key={path} component={Component} exact={true}></Route>
       ))
       }
       <Redirect to={LOGIN_ROUTE}></Redirect>

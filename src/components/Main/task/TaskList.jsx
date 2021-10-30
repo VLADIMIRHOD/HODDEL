@@ -74,7 +74,7 @@ export default function TaskList() {
       </form>
       <div className={classes.TaskList}>
         {
-        tasks.map((task) => {
+        tasks.map(task => {
           if (!task.complete) {
             return <Task task={task} key={task.id} remove={removeTask} />;
           }
