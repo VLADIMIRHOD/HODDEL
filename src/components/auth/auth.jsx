@@ -1,6 +1,9 @@
 import React, { useState }  from 'react';
 import classes from './style/auth.module.css'
 
+
+
+
 function Auth(props) {
   const [Login, setLogin] = useState('')
   const [Pass, setPass] = useState('')
