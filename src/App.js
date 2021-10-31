@@ -6,8 +6,7 @@ import "./style/App.css";
 function App() {
   return (
     <BrowserRouter>
-      <AppRouter />
-      <div>222</div>
+      <AppRouter/>
     </BrowserRouter>
   );
 }
