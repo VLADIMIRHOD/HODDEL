@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import Loader from "../../loader/loader";
 import classes from "./style/Task.module.css";
 import Task from "./Task";
 
 export default function TaskList() {
+
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -44,7 +46,6 @@ export default function TaskList() {
   const removeTask = (task) => {
     setTasks(tasks.filter((t) => t.id !== task.id));
   };
-
   return (
     <div className={classes.TasksBlock}>
       <form>
@@ -73,6 +74,7 @@ export default function TaskList() {
         </div>
       </form>
       <div className={classes.TaskList}>
+      {/* <Loader/> */}
         {
         tasks.map(task => {
           if (!task.complete) {

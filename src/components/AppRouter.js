@@ -4,34 +4,27 @@ import { Context } from "..";
 import { PrivateRoutes, PublicRoutes } from "../routes";
 import { LOGIN_ROUTE, TASK_LIST_ROUTE } from "../utils/consts";
 import { onAuthStateChanged } from "firebase/auth";
+import Loader from "./loader/loader";
 
 export default function AppRouter() {
   const { auth } = useContext(Context);
-  const [users, setUsers] = useState(20);
+  const [users, setUsers] = useState("loading");
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
       // const uid = user.uid;
-      setUsers(true)
+      setUsers(true);
       // ..
     } else {
-      console.log("login fasle");
-      setUsers(false)
+      setUsers(false);
       // User is signed out
       // ...
     }
   });
-  console.log(users);
-  if (users === 20) {
-    return (
-      <Switch>
-        <div>
-          <h1>ТУТ сделать лоадер</h1>
-        </div>
-      </Switch>
-    );
+  if (users === "loading") {
+    return <Loader />;
   }
   return users ? (
     <Switch>

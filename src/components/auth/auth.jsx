@@ -15,7 +15,7 @@ function Auth(props) {
 
   function login(e) {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, "boy.k.a@mail.ru", 123456)
+    signInWithEmailAndPassword(auth, Login, Pass)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
@@ -23,6 +23,7 @@ function Auth(props) {
         // ...
       })
       .catch((error) => {
+        alert("Не верное сочетание лигина и пароля")
         // const errorCode = error.code;
         // const errorMessage = error.message;
       });

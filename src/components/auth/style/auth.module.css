@@ -51,4 +51,10 @@ input.formItem::placeholder {
 
 button.formItem {
   text-transform: uppercase;
+  box-sizing: border-box;
+}
+input:-internal-autofill-selected {
+  border: 5px #C2C2FC solid;
+  border-radius: 5px;
+
 }
